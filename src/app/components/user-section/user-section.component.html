@@ -1,0 +1,56 @@
+<section class="section-card">
+  <h3 class="section-title">مدیریت کاربران</h3>
+
+  <app-user-list
+    [users]="users"
+    (userSelected)="onUserClick($event)">
+  </app-user-list>
+
+  <div class="forms-grid">
+    <div class="form-card">
+      <h4>ورود</h4>
+      <input [(ngModel)]="loginForm.username" placeholder="Username" />
+      <input [(ngModel)]="loginForm.password" type="password" placeholder="Password" />
+      <button class="btn-primary" (click)="onLogin()">Login</button>
+    </div>
+
+    <div class="form-card">
+      <h4>ثبت نام</h4>
+      <input [(ngModel)]="registerForm.name" placeholder="Name" />
+      <input [(ngModel)]="registerForm.username" placeholder="Username" />
+      <input [(ngModel)]="registerForm.password" type="password" placeholder="Password" />
+      <input [(ngModel)]="registerForm.age" type="number" placeholder="Age" />
+      <input [(ngModel)]="registerForm.credit" type="number" placeholder="Credit" />
+      <input [(ngModel)]="registerForm.email" placeholder="Email" />
+      <button class="btn-primary" (click)="onRegister()">Register</button>
+    </div>
+
+    <div class="form-card">
+      <h4>ویرایش</h4>
+      <input [(ngModel)]="editForm.Name" placeholder="Name" />
+      <input [(ngModel)]="editForm.Username" placeholder="Username" />
+      <input [(ngModel)]="editForm.Password" type="password" placeholder="Password" />
+      <input [(ngModel)]="editForm.Age" type="number" placeholder="Age" />
+      <input [(ngModel)]="editForm.Email" placeholder="Email" />
+      <button class="btn-primary" (click)="onEdit()">Edit</button>
+    </div>
+
+    <div class="form-card">
+      <h4>افزایش اعتبار</h4>
+      <input [(ngModel)]="addCreditForm.Username" placeholder="Username" />
+      <input [(ngModel)]="addCreditForm.Amount" type="number" placeholder="Amount" />
+      <button class="btn-primary" (click)="onAddCredit()">Add Credit</button>
+    </div>
+  </div>
+
+  <div *ngIf="selectedUser" class="summary-card">
+    <h4>خلاصه کاربر</h4>
+    <p>نام: {{ selectedUser.name }}</p>
+    <p>نام کاربری: {{ selectedUser.username }}</p>
+    <p>سن: {{ selectedUser.age }}</p>
+    <p>اعتبار: {{ selectedUser.credit }}</p>
+    <p>ایمیل: {{ selectedUser.email }}</p>
+  </div>
+
+  <p class="status-message" [ngClass]="statusType" *ngIf="statusMessage">{{ statusMessage }}</p>
+</section>
