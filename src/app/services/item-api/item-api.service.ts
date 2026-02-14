@@ -1,30 +1,32 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {BaseApiService} from '../base-api/base-api.service';
-import {Item} from "../../models/item.model";
-
+import {AddItemRequest, BuyItemRequest, Item} from "../../models/item.model";
 
 @Injectable()
 export class ItemApiService {
-  private readonly basePath = 'api/market';
+  private readonly basePath = 'item-apis';
 
   constructor(private readonly apiService: BaseApiService) {
   }
 
   public getItems(): Observable<Item[]> {
+    return this.apiService.get<Item[]>(`${this.basePath}/get-all`);
   }
 
-  public getItemById(itemId: string): Observable<Item> {
+  public getItemById(itemId: number): Observable<Item> {
+    return this.apiService.get<Item>(`${this.basePath}/get-by-id/${itemId}`);
   }
 
-
-  public updateItemName(payload: {
-    item_id: string;
-    newName: string;
-  }): Observable<void> {
-
+  public addItem(payload: AddItemRequest): Observable<string> {
+    return this.apiService.postText(`${this.basePath}/add`, payload);
   }
 
-  public deleteItem(itemId: string): Observable<void> {
+  public buyItem(payload: BuyItemRequest): Observable<string> {
+    return this.apiService.postText(`${this.basePath}/buy`, payload);
+  }
+
+  public deleteItem(itemId: number): Observable<string> {
+    return this.apiService.deleteText(`${this.basePath}/remove/${itemId}`);
   }
 }
