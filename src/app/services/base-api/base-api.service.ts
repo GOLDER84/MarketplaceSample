@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import {environment} from '../../environments/environments';
+import {environment} from '../../environments/environment';
 import {ApiError} from './models/api-error';
 
 @Injectable()
@@ -28,6 +28,12 @@ export class BaseApiService {
       .pipe(catchError(this.handleError));
   }
 
+  public put<T>(endpoint: string, body: any): Observable<T> {
+    return this.http.put<T>(this.getFullUrl(endpoint), body)
+      .pipe(catchError(this.handleError));
+  }
+
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.error('API Error:', error);
     let errorMessage = 'An unknown error occurred';
@@ -40,5 +46,20 @@ export class BaseApiService {
 
     return throwError(() => new ApiError(errorMessage, error.status));
   }
-}
+  //
+  public postText(endpoint: string, body: any): Observable<string> {
+    return this.http.post(this.getFullUrl(endpoint), body, { responseType: 'text' })
+      .pipe(catchError(this.handleError));
+  }
 
+  public putText(endpoint: string, body: any): Observable<string> {
+    return this.http.put(this.getFullUrl(endpoint), body, { responseType: 'text' })
+      .pipe(catchError(this.handleError));
+  }
+
+  public deleteText(endpoint: string, params?: any): Observable<string> {
+    return this.http.delete(this.getFullUrl(endpoint), { params, responseType: 'text' })
+      .pipe(catchError(this.handleError));
+  }
+  //
+}
