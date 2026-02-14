@@ -1,0 +1,19 @@
+<div *ngIf="users.length > 0" class="user-list">
+  <ul class="user-list__list">
+    <ng-container *ngFor="let user of users; trackBy: trackByUserId">
+      <li
+        [ngClass]="{ selected: user.username === activeUserId }"
+        (click)="onUserClick(user.username)"
+        class="user-list__item"
+      >
+        <div>
+          <div class="row-line"><span class="label">Name:</span> <strong>{{ user.name }}</strong></div>
+          <div class="row-line"><span class="label">Username:</span> {{ user.username }}</div>
+          <div class="row-line"><span class="label">Age:</span> {{ user.age }}</div>
+          <div class="row-line"><span class="label">Credit:</span> {{ user.credit }}</div>
+          <div class="row-line"><span class="label">Email:</span> {{ user.email }}</div>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>

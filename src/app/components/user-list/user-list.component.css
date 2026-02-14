@@ -1,0 +1,26 @@
+.user-list__item {
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user-list__item.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.2);
+}
+
+.row-line {
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+.label {
+  color: var(--muted);
+  min-width: 80px;
+  display: inline-block;
+}
