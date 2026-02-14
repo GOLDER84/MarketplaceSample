@@ -1,1 +1,31 @@
-<p>item-section works!</p>
+<section class="section-card">
+  <h3 class="section-title">مدیریت آیتم‌ها</h3>
+
+  <ul class="item-list">
+    <li *ngFor="let item of items">
+      <div>
+        <div><span class="label">نام:</span> <strong>{{ item.name }}</strong></div>
+        <div><span class="label">قیمت:</span> {{ item.price }}</div>
+        <div><span class="label">توضیح:</span> {{ item.description }}</div>
+      </div>
+      <button class="btn-danger" (click)="onDeleteItem(item.id)">حذف</button>
+    </li>
+  </ul>
+
+  <div class="form-card">
+    <h4>افزودن آیتم</h4>
+    <input [(ngModel)]="addItemForm.Name" placeholder="Name" />
+    <input [(ngModel)]="addItemForm.Price" type="number" placeholder="Price" />
+    <input [(ngModel)]="addItemForm.Description" placeholder="Description" />
+    <button class="btn-primary" (click)="onAddItem()">Add</button>
+  </div>
+
+  <div class="form-card">
+    <h4>خرید آیتم</h4>
+    <p>کاربر فعال: {{ activeUsername || 'هیچ' }}</p>
+    <input [(ngModel)]="buyItemId" type="number" placeholder="Item ID" />
+    <button class="btn-primary" (click)="onBuyItem()">Buy</button>
+  </div>
+
+  <p class="status-message" [ngClass]="statusType" *ngIf="statusMessage">{{ statusMessage }}</p>
+</section>
