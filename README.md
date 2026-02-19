@@ -102,7 +102,7 @@ The app automatically reloads when you change source files.
 ## 👤 Author
 
 **Aref Zargar**  
-Computer Engineering Student – Junior Backend Developer  
+Computer Engineering Student
 
 - GitHub: https://github.com/GOLDER84  
 - LinkedIn: https://www.linkedin.com/in/aref-zargar-a95287367/  
