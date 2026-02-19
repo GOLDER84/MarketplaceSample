@@ -86,7 +86,7 @@ The app automatically reloads when you change source files.
 
 ## 📸 Screenshots
 
-(Screenshot.jpeg)
+![App Screenshot](Screenshot.jpeg)
 
 ---
 
