@@ -1,27 +1,110 @@
-# MarketplaceSample
+# 🛍 Marketplace Sample – Angular Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+## 📌 Project Description
 
-## Development server
+This project is a **frontend implementation of a Marketplace system** developed using Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It was created as a sample client-side application to simulate an e-commerce platform interface and to practice modern frontend development concepts such as component-based architecture and service communication.
 
-## Code scaffolding
+The project is designed to work alongside a backend marketplace API.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## ✨ Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Product listing interface  
+- Category-based product display  
+- Product details view  
+- Shopping cart UI  
+- Responsive layout design  
+- Component-based architecture  
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠 Technologies Used
 
-## Running end-to-end tests
+- Angular 17  
+- TypeScript  
+- HTML5  
+- CSS3  
+- Angular CLI  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🏗 Architecture & Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The project follows Angular’s modular structure:
+
+- **Components** → UI sections  
+- **Services** → API communication  
+- **Modules** → Feature grouping  
+- **Routing** → Page navigation  
+
+---
+
+## 📂 Project Structure
+
+MarketplaceSample/
+│
+├── src/
+│ ├── app/
+│ │ ├── components/
+│ │ ├── services/
+│ │ ├── models/
+│ │ └── pages/
+│ │
+│ ├── assets/
+│ └── environments/
+
+---
+
+## ▶️ How to Run
+
+1️⃣ Clone the repository
+
+git clone https://github.com/GOLDER84/MarketplaceSample.git
+
+2️⃣ Install dependencies
+
+npm install
+
+3️⃣ Run development server
+
+ng serve
+
+4️⃣ Open in browser
+
+http://localhost:4200/
+
+---
+
+## 🧪 Development Server
+
+The app automatically reloads when you change source files.
+
+---
+
+## 📸 Screenshots
+
+(Screenshot.jpeg)
+
+---
+
+## 🎯 Learning Objectives
+
+- Practice Angular component architecture  
+- Understand frontend-backend communication  
+- Build scalable UI structure  
+- Work with TypeScript in real projects  
+
+---
+
+## 👤 Author
+
+**Aref Zargar**  
+Computer Engineering Student – Junior Backend Developer  
+
+- GitHub: https://github.com/GOLDER84  
+- LinkedIn: https://www.linkedin.com/in/aref-zargar-a95287367/  
+- Email: aref.unlimited.84@gmail.com
+
